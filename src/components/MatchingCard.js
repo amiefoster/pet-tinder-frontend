@@ -1,6 +1,15 @@
-function MatchingCard() {
-    return (
-        <div></div>)
-}
+function MatchingCard({petName, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge}) {
 
-export default MatchingCard;
+    console.log(species, "I am from MatchingCard")
+
+
+return (
+    <div>
+                <p>{species}</p>
+        </div>
+        )
+    }
+    
+    export default MatchingCard;
+    
+

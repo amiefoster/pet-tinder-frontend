@@ -1,3 +1,7 @@
-function MatchingContainer() {}
+function MatchingContainer() {
+    return (
+        <div></div>
+        )
+}
 
-export default Match;
+export default MatchingContainer;

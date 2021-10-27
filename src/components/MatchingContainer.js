@@ -37,7 +37,12 @@ function MatchingContainer() {
     });
   }
 
-  return <div>{renderPetProfiles()}</div>;
+  return (
+    <div className="card-container">
+      {renderPetProfiles()}
+    </div>
+
+  )
 }
 
 export default MatchingContainer;

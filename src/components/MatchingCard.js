@@ -3,12 +3,12 @@ function MatchingCard({petName, species, breed, petAge, ownerHobby, ownerName, i
     console.log(species, "I am from MatchingCard")
 
 
-return (
-    <div>
-                <p>{species}</p>
+    return (
+        <div>
+            <p>{species}</p>
         </div>
-        )
-    }
+    )
+}
     
     export default MatchingCard;
     

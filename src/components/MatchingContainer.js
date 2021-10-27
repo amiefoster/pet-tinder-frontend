@@ -22,7 +22,6 @@ function MatchingContainer() {
     }
 
     function renderPetProfiles (){
-        console.log(petProfiles, "I am from MAP")
         return petProfiles.map(
             petProfile => {
                 return(

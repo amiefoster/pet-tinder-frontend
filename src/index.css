@@ -13,17 +13,39 @@ code {
 }
 
 .card-container {
-  display: flex;
-  flex-flow: column wrap;
+  position: center;
   align-items: center;
+  align-content: center;
+  align-self: center;
+  /* background-color: #E6D9CC;
+  background-size: cover; */
 }
 
 .profile-card{
-  border: solid;
-  color: black;
-  border-radius: 5px;
-  width: 500px;
-  padding: 25px;
-  margin: 50px;
+    align-content: center;
+    align-items: center;
+    position:absolute;
+    background: white;
+    border: solid;
+    color: black;
+    border-radius:10px;
+    padding:20px;
+    justify-content: center;
+    width:400px;
+    min-height: 600px;
+    margin: 100px;
+       
+}
 
+button:hover {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+img:hover {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+body{
+  background-image: url("./images/home-background.png");
+  background-size: cover;
 }

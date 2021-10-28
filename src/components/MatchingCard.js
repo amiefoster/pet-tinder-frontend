@@ -3,9 +3,10 @@ import {useState} from "react"
 //import { useDrag } from 'react-use-gesture'
 //import { animated, interpolate } from "react-spring/hooks";
 
-function MatchingCard({petName, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge}) {
+function MatchingCard({petName, id, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge, handleDeleteClick, handleLikeClick}) {
     
 //set state for owner details
+    //state is toggled onClick on line 16
     const [isVisible, setIsvisible] = useState(false)
 
 //working on spring
@@ -15,15 +16,15 @@ function MatchingCard({petName, species, breed, petAge, ownerHobby, ownerName, i
         <div onClick={() => setIsvisible(!isVisible)}>
             <img src={imageUrl} alt="pic of pet" className="profile-pic"/>
             <p>{petName}, {petAge}</p>
-            <p>{breed}</p>
+            <p>Breed: {breed}</p>
             {isVisible ? 
                 <div className="owner-details">
                     <p>My owners name is, {ownerName}. They are {ownerAge} and love {ownerHobby}.</p>
                 </div> : 
                         null}
         </div>
-            <button onClick={() => console.log("delete button was clicked")}>❌</button>
-            <button onClick={() => console.log("match button was clicked")}>💗</button>
+            <button onClick={() => handleDeleteClick(id)}>❌</button>
+            <button onClick={() => handleLikeClick(petName, id, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge)}>💗</button>
         </div>
     )
 }

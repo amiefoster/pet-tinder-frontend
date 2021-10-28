@@ -54,11 +54,11 @@ function UserProfile() {
             <div className="profile-card">
         <div onClick={() => setIsvisible(!isVisible)}>
             <img src={image_url} alt="pic of pet" className="profile-pic"/>
-            <p>{petName}, {age}</p>
-            <p>Breed: {breed}</p>
+            <h2>{petName}, {age}</h2>
+            <h4>Breed: {breed}</h4>
             {isVisible ? 
                 <div className="owner-details">
-                    <p>My owners name is, {owner_name}. They are {owner_age} and love {owner_hobby}.</p>
+                    <h3>My owners name is, {owner_name}. They are {owner_age} and love {owner_hobby}.</h3>
                 </div> : 
                         null}
         </div>

@@ -47,7 +47,8 @@ img:hover {
 
 body{
   background-image: url("./images/home-background.png");
-  background-size: cover;
+  background-size: auto;
+  background-repeat:no-repeat
 }
 
 .match-pic{

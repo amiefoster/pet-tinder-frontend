@@ -47,6 +47,8 @@ img:hover {
 
 body{
   background-image: url("./images/home-background.png");
+  background-repeat:no-repeat;
+
   background-size: cover;
 }
 

@@ -5,7 +5,7 @@ function Matches({petName, species, breed, age, ownerHobby, imageUrl, profileLik
     return (
         <div className="match-card">
            <div>
-            <img src={imageUrl}/>
+            <img src={imageUrl} alt="pet pic"/>
             </div> 
             <h1>{ownerName}, {ownerAge}</h1>
             <h3>Hobby: {ownerHobby}</h3>

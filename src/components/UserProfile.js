@@ -4,6 +4,7 @@ function UserProfile() {
     
     const USER_URL = 'http://localhost:9292/mainuser'
     const [user, setUser] = useState([])
+    const [isVisible, setIsvisible] = useState(false)
 
 
     useEffect(() => {
@@ -50,6 +51,22 @@ function UserProfile() {
 
     return (
         <div>
+            <div className="profile-card">
+        <div onClick={() => setIsvisible(!isVisible)}>
+            <img src={image_url} alt="pic of pet" className="profile-pic"/>
+            <p>{petName}, {age}</p>
+            <p>Breed: {breed}</p>
+            {isVisible ? 
+                <div className="owner-details">
+                    <p>My owners name is, {owner_name}. They are {owner_age} and love {owner_hobby}.</p>
+                </div> : 
+                        null}
+        </div>
+            <button>❌</button>
+            <button>💗</button>
+        </div>
+
+
             <div>
                 <p> {id}{petName}{species} </p>
             </div>

@@ -1,6 +1,6 @@
 
 import React from "react";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function UserProfile() {  
     const USER_URL = 'http://localhost:9292/mainuser'

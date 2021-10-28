@@ -51,13 +51,6 @@ function MatchingCard({petName, id, species, breed, petAge, ownerHobby, ownerNam
                         <div className="owner-details">
                             <h5>My owners name is, {ownerName}. They are {ownerAge} and love {ownerHobby}.</h5></div> : null}
                 </div>
-                    <div className="card-buttons">
-                        <button onClick={() => handleDeleteClick(id)}>❌</button>
-
-                        <span onClick={() => itsAMatch(profileLike)}>
-                            <button onClick={() => handleLikeClick(petName, id, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge)}>💗</button>
-                        </span>
-                    </div>
                 </div>
 
             </TinderCard>

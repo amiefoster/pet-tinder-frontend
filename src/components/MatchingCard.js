@@ -40,7 +40,7 @@ function MatchingCard({petName, id, species, breed, petAge, ownerHobby, ownerNam
         </div>
             <button onClick={() => handleDeleteClick(id)}>❌</button>
             <span onClick={() => itsAMatch(profileLike)}>
-            <button onClick={() => handleLikeClick(petName, id, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge)}>💗</button>
+                <button onClick={() => handleLikeClick(petName, id, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge)}>💗</button>
             </span>
         </div>
     )

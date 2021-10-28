@@ -2,21 +2,16 @@
 import React from "react";
 import { useState } from "react"
 
-
-
-
 function UserProfile() {  
     const USER_URL = 'http://localhost:9292/mainuser'
     const [user, setUser] = useState([])
     const [isVisible, setIsvisible] = useState(false)
-
 
     useEffect(() => {
         fetch(USER_URL)
         .then(response => response.json())
         .then(data => checkIfUserExists(data))
     }, [])
-
 
     function checkIfUserExists(data){
         if (!!data){
@@ -53,9 +48,6 @@ function UserProfile() {
     }
     renderUser()
   
-  
-  
-  
     // const [formData, setFormData] = useState({
     //     name: "",
     //     breed: "",
@@ -66,9 +58,6 @@ function UserProfile() {
     //     ownerAge: ""
 
     // })
-
-
-    
 
     // function handleChange(event) {
     //     setFormData({
@@ -98,9 +87,6 @@ function UserProfile() {
     //     .then(updatedUserProfile => ??????())
     // }
 
-
-   
-    
     return (
         <div>
            <div className="profile-card">
@@ -186,5 +172,6 @@ function UserProfile() {
             </div>
         </div>
         );    
+}
 
 export default UserProfile;

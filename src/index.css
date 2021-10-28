@@ -49,3 +49,10 @@ body{
   background-image: url("./images/home-background.png");
   background-size: cover;
 }
+
+.match-pic{
+  position:absolute;
+  max-width: 250px;
+  max-height: 250px;
+  
+}

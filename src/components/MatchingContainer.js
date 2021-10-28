@@ -45,15 +45,18 @@ function MatchingContainer() {
 
   function handleLikeClick(petName, id, species, breed, petAge, ownerHobby, 
     ownerName, imageUrl, profileLike, ownerAge){
-    fetch("http://localhost:9292/mutuallikes", {
-      method: "POST", 
-      headers: {
-        "ContentType": "application/json"
-      },
-      body: JSON.stringify({
-        pet_profile_id: id
-      })
-    })
+
+      console.log(petName, id, species, breed, petAge, ownerHobby, 
+        ownerName, imageUrl, profileLike, ownerAge)
+    // fetch("http://localhost:9292/mutuallikes", {
+    //   method: "POST", 
+    //   headers: {
+    //     "ContentType": "application/json"
+    //   },
+    //   body: JSON.stringify({
+    //     pet_profile_id: id
+    //   })
+    // })
   }
 
 

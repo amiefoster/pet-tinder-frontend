@@ -42,11 +42,8 @@ function UserProfile() {
                 owner_name = singleUser.owner_name
                 owner_age = singleUser.owner_age
                   console.log (id, "this is inside renderedUser ID 1")
-          }  
-
-        )
-    }
-    renderUser()
+          })
+    } renderUser()
   
     // const [formData, setFormData] = useState({
     //     name: "",

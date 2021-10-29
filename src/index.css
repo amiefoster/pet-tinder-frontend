@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 
-
 .logo {
-  max-width:200px;
+  height: 40px;
+  object-fit: contain;
 }
 
+.container{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+
+}
 
  body{
    font-family: 'Raleway', sans-serif;
@@ -50,6 +56,7 @@
    border: 5px solid #FFFF00;
    padding: 10px;
    }
+   
 
  .center-title {
    position: fixed;
@@ -73,15 +80,6 @@
   max-height: 250px;
 }
 
-.center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: 5px solid #FFFF00;
-  padding: 10px;
-  }
-
 
 #center-title-button {
   position: fixed;
@@ -91,4 +89,6 @@
   padding: 10px;
   size: 100ch;
 }
+
+
 

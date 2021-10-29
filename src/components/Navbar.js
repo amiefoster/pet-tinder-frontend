@@ -6,13 +6,12 @@ function Navbar() {
     <div>
       <div className="navbar navbar-light nav-bar-styling rounded">
         <div className="container">
-          <img src={logo} className="logo" />
           <NavLink
             to="/"
             className="text-muted no-underline"
             style={{ textDecorationLine: "none" }}
           >
-            <h3>🐾 Home</h3>
+            <h3><img src={logo} className="logo" /></h3>
           </NavLink>
           <NavLink
             to="/FindMatches"

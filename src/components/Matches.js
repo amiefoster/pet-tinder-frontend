@@ -3,10 +3,7 @@ function Matches({
 }) {
   
   return (
-    <div className="match-card">
-      <div>
-        <img src={imageUrl} alt="pet pic" />
-      </div>
+    <div className="match-card" style={{backgroundImage: `url(${imageUrl})`}}>
       <h1>
         {ownerName}, {ownerAge}
       </h1>

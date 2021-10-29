@@ -113,3 +113,27 @@ body {
 .user-profile-form {
   float: right;
 }
+
+.match-card{
+  width: 300px;
+  padding: 20px;
+  max-width: 85vw;
+  color: white;
+  height: 50vh;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  margin-left: 225px;
+  margin-top: 100px;
+}
+
+
+.matches-container{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  margin-top: 6vh;
+  background-color: none;
+  background-size: cover;
+}
+

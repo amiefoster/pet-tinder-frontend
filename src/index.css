@@ -149,6 +149,7 @@ body {
 .matches-container{
   flex-wrap: wrap;
   display: flex;
+  margin-left: 28%;
   justify-content: center;
   margin-top: 6vh;
   background-color: none;

@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 
+
+ body{
+   font-family: 'Raleway', sans-serif;
+   background-color: #E9dfd6;
+   background-image: url("./images/home-background.png");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center;
+
 .card-container {
   display: flex;
   justify-content: center;
@@ -25,27 +34,32 @@
   position:absolute;
 }
 
-button {
-  border-radius: 100;
-  background-color: white
-}
+.center {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   border: 5px solid #FFFF00;
+   padding: 10px;
+   }
 
-button:hover {
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
-}
 
-img:hover {
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
-}
+ .center-title {
+   position: fixed;
+   left: 50%;
+   top: 40%;
+   transform: translate(-50%, -50%);
+   padding: 10px;
+   }
 
-body{
-  background-image: url("./images/home-background.png");
-  background-size: auto;
-  background-repeat:no-repeat;
-  font-family: 'Raleway', sans-serif;
-
-}
-
+ #center-title-button {
+   position: fixed;
+   left: 50%;
+   top: 100%;
+   transform: translate(-50%, -50%);
+   padding: 10px;
+ }
+   
 .match-pic{
   position:absolute;
   max-width: 250px;

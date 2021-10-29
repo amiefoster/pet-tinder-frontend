@@ -1,91 +1,85 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import TinderCard from "react-tinder-card";
+import React, { useState, useEffect } from "react";
 
-function UserProfile() {
-  const USER_URL = "http://localhost:9292/mainuser";
-  const [user, setUser] = useState([]);
-  const [isVisible, setIsvisible] = useState(false);
+function UserProfile(){
 
-  useEffect(() => {
-    fetch(USER_URL)
-      .then((response) => response.json())
-      .then((data) => checkIfUserExists(data));
-  }, []);
+    const USER_URL = 'http://localhost:9292/mainuser'
+    const [user, setUser] = useState([])
+    const [isVisible, setIsvisible] = useState(false);
 
-  function checkIfUserExists(data) {
-    if (!!data) {
-      setUser(data);
+    
+    //GETting user from database
+    useEffect(() => {
+        fetch(USER_URL)
+        .then(response => response.json())
+        .then(data => checkIfUserExists(data)) //taking data and running it through handler function to see if it exists before SETTING to user
+    }, [user])
+
+
+
+    function checkIfUserExists(data){
+        if (!!data){
+            setUser(data) //SETTING to user
+        }
     }
-  }
+    
+    //empty variables to hold user INFO outside of MAPPING scope
 
-  let id = " ";
-  let petName = null;
-  let species = null;
-  let breed = null;
-  let age = null;
-  let owner_hobby = null;
-  let image_url = null;
-  let owner_name = null;
-  let owner_age = null;
+    let id = " ";
+    let petName = "";
+    let species = "";
+    let breed = "";
+    let age = "";
+    let owner_hobby= "";
+    let image_url= "";
+    let owner_name= "";
+    let owner_age= "";
 
-  function renderUser() {
-    return user.forEach((singleUser) => {
-      id = singleUser.id;
-      petName = singleUser.name;
-      species = singleUser.species;
-      breed = singleUser.breed;
-      age = singleUser.age;
-      owner_hobby = singleUser.owner_hobby;
-      image_url = singleUser.image_url;
-      owner_name = singleUser.owner_name;
-      owner_age = singleUser.owner_age;
-      console.log(id, "this is inside renderedUser ID 1");
-    });
-  }
-  renderUser();
+    //Iterating through User to later save the variables
+    function renderUser () {
+        return user.forEach(
+          singleUser => {
+                id = singleUser.id
+                petName = singleUser.name
+                species = singleUser.species
+                breed = singleUser.breed
+                age = singleUser.age
+                owner_hobby = singleUser.owner_hobby
+                image_url = singleUser.image_url
+                owner_name = singleUser.owner_name
+                owner_age = singleUser.owner_age
+          })
+    } renderUser()
 
-  // const [formData, setFormData] = useState({
-  //     name: "",
-  //     breed: "",
-  //     age: "",
-  //     imgUrl: "",
-  //     ownerName: "",
-  //     ownerHobby: "",
-  //     ownerAge: ""
+    //setting States for all our variables
+    const [updatedPetName, setUpdatedPetName] = useState(petName);
+    const [updatedSpecies, setUpdatedSpecies] = useState(species);
+    const [updatedBreed, setUpdatedBreed] = useState(breed);
+    const [updatedAge, setUpdatedAge] = useState(age);
+    const [updatedOwner_Hobby, setUpdatedOwner_Hobby] = useState(owner_hobby);
+    const [updatedImage_Url, setUpdatedImage_Url] = useState(image_url);
+    const [updatedOwner_Name, setUpdatedOwner_Name] = useState(owner_name);
+    const [updatedOwner_Age, setUpdatedOwner_Age] = useState(owner_age);
 
-  // })
 
-  // function handleChange(event) {
-  //     setFormData({
-  //       ...formData,
-  //       [event.target.name]: event.target.value,
-  //     });
-  // }
+    //PATCHING - updating our user info in the backend
+    function handleEditForm(e) {
+        e.preventDefault();
 
-  // function handleSubmit(event) {
-  //     event.preventDefault();
-  //     fetch("http://localhost:9292/mainuser/1/edit", {
-  //         method: "POST",
-  //         headers: {
-  //             "Content-Type": "application/json",
-  //         },
-  //         body:JSON.stringify({
-  //             name:  formData.name,
-  //             breed: formData.breed,
-  //             age: formData.age,
-  //             imgUrl: formData.imgUrl,
-  //             ownerName: formData.ownerName,
-  //             ownerHobby: formData.ownerHobby,
-  //             ownerAge: formData.ownerAge
-  //         })
-  //     })
-  //     .then(response => response.json())
-  //     .then(updatedUserProfile => ??????())
-  // }
+        fetch('http://localhost:9292/mainuser/1/edit', {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name: updatedPetName, species: updatedSpecies, breed: updatedBreed, age: updatedAge, owner_hobby: updatedOwner_Hobby, image_url: updatedImage_Url, owner_name: updatedOwner_Name, owner_age: updatedOwner_Age }),
+        })
+        .then((resp) => resp.json())
+        .then((updatedUserProfile) => setUser(updatedUserProfile)); //SETting all new info into SetUser
 
-  return (
-    <div>
+    }
+
+    return (
+      <div>
+      {/* User Profile Card */}
       <div className="profile-card user-profile-card">
         <div onClick={() => setIsvisible(!isVisible)}>
           <img src={image_url} alt="pic of pet" className="profile-pic" />
@@ -103,69 +97,87 @@ function UserProfile() {
           ) : null}
         </div>
       </div>
+            
+        <form onSubmit={handleEditForm}>
+            <label>Pet Name:</label>
+            <input
+                id="petName"
+                type="text"
+                name="petName"
+                value={updatedPetName}
+                onChange={(e) => setUpdatedPetName(e.target.value)}
+                style={{display: 'block'}}
+            />
+            <label>Cat or Dog:</label>
+            <input
+                id="species"
+                type="text"
+                name="species"
+                value={updatedSpecies}
+                onChange={(e) => setUpdatedSpecies(e.target.value)}
+                style={{display: 'block'}}
+            />
 
-      <div className="user-profile-form"></div>
-      <div className="form-box">
-        <h2>Test Form</h2>
-        <form>
-          <input
-            type="text"
-            name="name"
-            placeholder="Update your pets name!"
-            // onChange={handleChange}
-          />
+            <label>Breed:</label>
+            <input
+                id="breed"
+                type="text"
+                name="breed"
+                value={updatedBreed}
+                onChange={(e) => setUpdatedBreed(e.target.value)}
+                style={{display: 'block'}}
+            />
+            <label>Pet Age:</label>
+            <input
+                id="age"
+                type="text"
+                name="age"
+                value={updatedAge}
+                onChange={(e) => setUpdatedAge(e.target.value)}
+                style={{display: 'block'}}
+            />
+            <label>Image URL:</label>
+            <input
+                id="imageUrl"
+                type="text"
+                name="imageUrl"
+                value={updatedImage_Url}
+                onChange={(e) => setUpdatedImage_Url(e.target.value)}
+                style={{display: 'block'}}
+            />
+            <label>Your Name:</label>
+            <input
+                id="ownerName"
+                type="text"
+                name="ownerName"
+                value={updatedOwner_Name}
+                onChange={(e) => setUpdatedOwner_Name(e.target.value)}
+                style={{display: 'block'}}
+            />
+            <label>Your Favorite Hobby:</label>
+            <input
+                id="ownerHobby"
+                type="text"
+                name="ownerHobby"
+                value={updatedOwner_Hobby}
+                onChange={(e) => setUpdatedOwner_Hobby(e.target.value)}
+                style={{display: 'block'}}
+            />
+            <label>Your Age:</label>
+            <input
+            id="ownerAge"
+                type="text" 
+                name="ownerAge"
+                value={updatedOwner_Age}
+                onChange={(e) => setUpdatedOwner_Age(e.target.value)}
+                style={{display: 'block'}}
+            />
+            <button type="submit">Update Your Profile Information</button>
 
-          <select>
-            <option>Do you have a cat or dog?</option>
-            <option value="cat">Cat</option>
-            <option value="dog">Dog</option>
-          </select>
-
-          <input
-            type="text"
-            name="breed"
-            placeholder="What breed is your pet?"
-            // onChange={handleChange}
-          />
-
-          <input
-            type="text"
-            name="age"
-            placeholder="How old is your pet?"
-            // onChange={handleChange}
-          />
-
-          <input
-            type="text"
-            name="imageUrl"
-            placeholder="http://www.yourImageURLhere.com"
-            // onChange={handleChange}
-          />
-
-          <input
-            type="text"
-            name="ownerName"
-            placeholder="What is your name?"
-            // onChange={handleChange}
-          />
-
-          <input
-            type="text"
-            name="ownerHobby"
-            placeholder="What is your favorite hobby?"
-            // onChange={handleChange}
-          />
-
-          <input
-            type="text"
-            name="ownerAge"
-            placeholder="What is your age?"
-            // onChange={handleChange}
-          />
-          <button type="submit">Update Your Profile Information</button>
         </form>
-      </div>
-    </div>
-  );
+        </div>
+    );
+
+
 }
 export default UserProfile;

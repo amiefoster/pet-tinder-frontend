@@ -12,7 +12,7 @@ function UserProfile(){
         fetch(USER_URL)
         .then(response => response.json())
         .then(data => checkIfUserExists(data)) //taking data and running it through handler function to see if it exists before SETTING to user
-    }, [user])
+    }, [])
 
 
 
@@ -79,20 +79,19 @@ function UserProfile(){
 
     return (
       <div>
-      {/* User Profile Card */}
-      <div className="profile-card user-profile-card">
+      
+      <div className="profile-card user-profile-card" style={{backgroundImage: `url(${image_url})`}}>
         <div onClick={() => setIsvisible(!isVisible)}>
-          <img src={image_url} alt="pic of pet" className="profile-pic" />
           <h2>
             {petName}, {age}
           </h2>
           <h4>Breed: {breed}</h4>
           {isVisible ? (
             <div className="owner-details">
-              <h3>
+              <h5>
                 My owners name is, {owner_name}. They are {owner_age} and love{" "}
                 {owner_hobby}.
-              </h3>
+              </h5>
             </div>
           ) : null}
         </div>

@@ -9,11 +9,11 @@ function UserProfile(){
     
     //GETting user from database
     useEffect(() => {
+
       fetch(USER_URL)
       .then(response => response.json())
       .then(data => checkIfUserExists(data)) //taking data and running it through handler function to see if it exists before SETTING to user
     }, [])
-    
     
     function checkIfUserExists(data){
         if (!!data){
@@ -80,8 +80,8 @@ function UserProfile(){
     }
 
     return (
+
       <div className="container">
-      {/* User Profile Card */}
       <div className="profile-card user-profile-card" style={{backgroundImage: `url(${image_url})`}}>
         <div onClick={() => setIsvisible(!isVisible)}>
           <h2>
@@ -90,10 +90,10 @@ function UserProfile(){
           <h4>Breed: {breed}</h4>
           {isVisible ? (
             <div className="owner-details">
-              <h3>
+              <h5>
                 My owners name is, {owner_name}. They are {owner_age} and love{" "}
                 {owner_hobby}.
-              </h3>
+              </h5>
             </div>
           ) : null}
         </div>

@@ -47,7 +47,7 @@ function MatchingCard({
         <img src={matchImg} className="match-pic" alt="match banner" />
       ) : null}
       <TinderCard
-        className="swipe profile-card"
+        className="swipe"
         preventSwipe={["up", "down"]}
         onSwipe={(dir) =>
           swiped(

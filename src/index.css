@@ -146,3 +146,11 @@ body {
   background-size: cover;
 }
 
+.matches-container{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  margin-top: 6vh;
+  background-color: none;
+  background-size: cover;
+}

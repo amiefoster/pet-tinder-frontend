@@ -80,8 +80,8 @@ function UserProfile(){
     }
 
     return (
-      <div>
-      
+
+      <div className="container">
       <div className="profile-card user-profile-card" style={{backgroundImage: `url(${image_url})`}}>
         <div onClick={() => setIsvisible(!isVisible)}>
           <h2>
@@ -173,7 +173,8 @@ function UserProfile(){
                 onChange={(e) => setUpdatedOwner_Age(e.target.value)}
                 style={{display: 'block'}}
             />
-            <button type="submit">Update Your Profile Information</button>
+            <br/>
+            <button className="btn-sm btn-danger" type="submit">Update Your Profile Information</button>
 
         </form>
         </div>

@@ -112,4 +112,37 @@ body {
 
 .user-profile-form {
   float: right;
+  margin-right: 230px;
+  margin-top: 100px;
+  padding: 10px;
+  padding-left: 10px;;
+  background: rgba(225, 225, 225, 0.85);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.match-card{
+  width: 300px;
+  padding: 20px;
+  max-width: 85vw;
+  color: white;
+  height: 50vh;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  margin-left: 25px;
+  margin-top: 50px;
+}
+
+
+.matches-container{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  margin-top: 6vh;
+  background-color: none;
+  background-size: cover;
+}
+

@@ -1,29 +1,28 @@
 import React from "react";
-import {Route, Switch} from "react-router-dom"
+import { Route, Switch } from "react-router-dom";
 import Navbar from "./Navbar";
 import MatchingContainer from "./MatchingContainer";
-import Home from "./Home"
+import Home from "./Home";
 import UserProfile from "./UserProfile";
 import MatchesContainer from "./MatchesContainer";
 
 function App() {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <Switch>
         <Route exact path="/Matches">
-          <MatchesContainer/>
+          <MatchesContainer />
         </Route>
         <Route exact path="/FindMatches">
-          <MatchingContainer/>
+          <MatchingContainer />
         </Route>
         <Route exact path="/UserProfile">
-          <UserProfile/>
+          <UserProfile />
         </Route>
         <Route exact path="/">
-          <Home/>
+          <Home />
         </Route>
-        
       </Switch>
     </div>
   );

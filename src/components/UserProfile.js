@@ -5,17 +5,16 @@ function UserProfile(){
     const USER_URL = 'http://localhost:9292/mainuser'
     const [user, setUser] = useState([])
     const [isVisible, setIsvisible] = useState(false);
-
+    const [refresh, setRefresh] = useState(false);
     
     //GETting user from database
     useEffect(() => {
-        fetch(USER_URL)
-        .then(response => response.json())
-        .then(data => checkIfUserExists(data)) //taking data and running it through handler function to see if it exists before SETTING to user
-    }, [user])
-
-
-
+      fetch(USER_URL)
+      .then(response => response.json())
+      .then(data => checkIfUserExists(data)) //taking data and running it through handler function to see if it exists before SETTING to user
+    }, [])
+    
+    
     function checkIfUserExists(data){
         if (!!data){
             setUser(data) //SETTING to user
@@ -73,7 +72,10 @@ function UserProfile(){
             body: JSON.stringify({ name: updatedPetName, species: updatedSpecies, breed: updatedBreed, age: updatedAge, owner_hobby: updatedOwner_Hobby, image_url: updatedImage_Url, owner_name: updatedOwner_Name, owner_age: updatedOwner_Age }),
         })
         .then((resp) => resp.json())
-        .then((updatedUserProfile) => setUser(updatedUserProfile)); //SETting all new info into SetUser
+        .then((updatedUserProfile) => {
+          setUser([updatedUserProfile])
+          // setRefresh(!refresh)
+        }); //SETting all new info into SetUser
 
     }
 
@@ -97,8 +99,8 @@ function UserProfile(){
           ) : null}
         </div>
       </div>
-            
-        <form onSubmit={handleEditForm}>
+
+        <form onSubmit={handleEditForm} className="user-profile-form">
             <label>Pet Name:</label>
             <input
                 id="petName"

@@ -80,11 +80,10 @@ function UserProfile(){
     }
 
     return (
-      <div>
+      <div className="container">
       {/* User Profile Card */}
-      <div className="profile-card user-profile-card">
+      <div className="profile-card user-profile-card" style={{backgroundImage: `url(${image_url})`}}>
         <div onClick={() => setIsvisible(!isVisible)}>
-          <img src={image_url} alt="pic of pet" className="profile-pic" />
           <h2>
             {petName}, {age}
           </h2>
@@ -175,7 +174,7 @@ function UserProfile(){
                 style={{display: 'block'}}
             />
             <br/>
-            <button type="submit">Update Your Profile Information</button>
+            <button className="btn-sm btn-danger" type="submit">Update Your Profile Information</button>
 
         </form>
         </div>

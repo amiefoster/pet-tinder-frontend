@@ -1,6 +1,8 @@
 import MatchingCard from "./MatchingCard";
 import { useEffect, useState } from "react";
 
+
+
 function MatchingContainer() {
   const BASE_URL = "http://localhost:9292/petprofiles";
   const [petProfiles, setPetProfiles] = useState([]);
@@ -19,6 +21,8 @@ function MatchingContainer() {
       setPetProfiles(data);
     }
   }
+
+  
 
   //delete function - takes in id on click and uses that id to delete and passes to handleDelete
   function handleDeleteClick(id){
@@ -74,8 +78,6 @@ function MatchingContainer() {
     .then (data => console.log(data) )
   }
 
-
-
   function renderPetProfiles() {
     return petProfiles.map((petProfile) => {
       return (
@@ -99,7 +101,7 @@ function MatchingContainer() {
   }
 
   return (
-    <div className="card-container">
+    <div className="big-card-container">
       {renderPetProfiles()}
     </div>
 

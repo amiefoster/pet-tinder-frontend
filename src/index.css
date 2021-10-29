@@ -1,4 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Roboto:wght@500&display=swap');
+
+.btn-danger{
+  background-color: #ef266a !important
+}
+
+.landing-page-font{
+  font-family: 'Roboto', sans-serif;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 1em rgb(12, 4, 3), 0 0 0.2em rgb(10, 2, 1);
+}
+
 
 .logo {
   height: 40px;
@@ -146,12 +160,8 @@ body {
   background-size: cover;
 }
 
-.matches-container{
-  flex-wrap: wrap;
-  display: flex;
+.big-card-container{
   margin-left: 28%;
-  justify-content: center;
-  margin-top: 6vh;
-  background-color: none;
-  background-size: cover;
+  /* fuck you git! */
+
 }

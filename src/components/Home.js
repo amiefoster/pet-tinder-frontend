@@ -3,11 +3,11 @@ function Home() {
     <div className="home-background">
       <div className="center-title">
         <div className="center-image">
-          <h1
+          <h1 className="landing-page-font"
             style={{
-              fontSize: "8vw",
+              fontSize: "7.62vw",
               color: "#ef266a",
-              textShadow: "2px 2px 5px red",
+              // textShadow: "1px 1px 1px #000",             
               margin: "0",
               textAlign: "center",
             }}>

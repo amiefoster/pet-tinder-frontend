@@ -9,11 +9,11 @@ function UserProfile(){
     
     //GETting user from database
     useEffect(() => {
+
       fetch(USER_URL)
       .then(response => response.json())
       .then(data => checkIfUserExists(data)) //taking data and running it through handler function to see if it exists before SETTING to user
     }, [])
-    
     
     function checkIfUserExists(data){
         if (!!data){
@@ -85,10 +85,10 @@ function UserProfile(){
     }
 
     return (
+
       <div className="container">
-      {/* User Profile Card */}
-      <div onClick={() => setIsvisible(!isVisible)} className="profile-card user-profile-card" style={{backgroundImage: `url(${image_url})`}}>
-        <div>
+      <div className="profile-card user-profile-card" style={{backgroundImage: `url(${image_url})`}}>
+        <div onClick={() => setIsvisible(!isVisible)}>
           <h2>
             {petName}, {age}
           </h2>
@@ -112,7 +112,7 @@ function UserProfile(){
                 name="petName"
                 value={updatedPetName}
                 onChange={(e) => setUpdatedPetName(e.target.value)}
-                style={{display: 'block', borderRadius: "4px"}}
+                style={{display: 'block'}}
             />
             <label>Cat or Dog:</label>
             <input

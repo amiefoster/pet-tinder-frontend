@@ -48,6 +48,7 @@ function MatchingCard({
       ) : null}
       <TinderCard
         className="swipe justify-content-center"
+
         preventSwipe={["up", "down"]}
         onSwipe={(dir) =>
           swiped(

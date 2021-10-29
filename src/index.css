@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 
+.logo {
+  max-width:200px;
+}
+
 .card-container {
   display: flex;
   justify-content: center;
@@ -25,18 +29,6 @@
   position:absolute;
 }
 
-button {
-  border-radius: 100;
-  background-color: white
-}
-
-button:hover {
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
-}
-
-img:hover {
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
-}
 
 body{
   background-image: url("./images/home-background.png");

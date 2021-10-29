@@ -1,6 +1,8 @@
 import MatchingCard from "./MatchingCard";
 import { useEffect, useState } from "react";
 
+
+
 function MatchingContainer() {
   const BASE_URL = "http://localhost:9292/petprofiles";
   const [petProfiles, setPetProfiles] = useState([]);
@@ -19,6 +21,8 @@ function MatchingContainer() {
       setPetProfiles(data);
     }
   }
+
+  
 
   //delete function - takes in id on click and uses that id to delete and passes to handleDelete
   function handleDeleteClick(id){
@@ -43,23 +47,36 @@ function MatchingContainer() {
       //so we need to send all the information back up and make a new object witht that info????
         //because mutual likes belongs to both USER and PROFILE shouldnt it have access to the whole object by the id??
 
+
   function handleLikeClick(petName, id, species, breed, petAge, ownerHobby, 
     ownerName, imageUrl, profileLike, ownerAge){
 
       console.log(petName, id, species, breed, petAge, ownerHobby, 
         ownerName, imageUrl, profileLike, ownerAge)
-    // fetch("http://localhost:9292/mutuallikes", {
-    //   method: "POST", 
-    //   headers: {
-    //     "ContentType": "application/json"
-    //   },
-    //   body: JSON.stringify({
-    //     pet_profile_id: id
-    //   })
-    // })
+        
+    fetch("http://localhost:9292/mutuallikes", {
+      method: "POST", 
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ 
+        main_user_profile_id: 1,
+        pet_profile_id: id,
+        name: petName,
+        species: species, 
+        breed: breed,
+        age: petAge,
+        owner_hobby: ownerHobby,
+        image_url: imageUrl,
+        profile_like:  profileLike,
+        owner_name: ownerName,
+        owner_age: ownerAge
+      })
+    })
+    .then (resp => resp.json())
+    .then (data => console.log(data) )
   }
-
-
 
   function renderPetProfiles() {
     return petProfiles.map((petProfile) => {
@@ -84,7 +101,7 @@ function MatchingContainer() {
   }
 
   return (
-    <div className="card-container">
+    <div className="big-card-container">
       {renderPetProfiles()}
     </div>
 

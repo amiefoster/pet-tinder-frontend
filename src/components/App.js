@@ -2,9 +2,9 @@ import React from "react";
 import {Route, Switch} from "react-router-dom"
 import Navbar from "./Navbar";
 import MatchingContainer from "./MatchingContainer";
-import Matches from "./Matches";
 import Home from "./Home"
 import UserProfile from "./UserProfile";
+import MatchesContainer from "./MatchesContainer";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Navbar/>
       <Switch>
         <Route exact path="/Matches">
-          <Matches/>
+          <MatchesContainer/>
         </Route>
         <Route exact path="/FindMatches">
           <MatchingContainer/>

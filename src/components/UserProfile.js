@@ -59,6 +59,11 @@ function UserProfile(){
     const [updatedOwner_Name, setUpdatedOwner_Name] = useState(owner_name);
     const [updatedOwner_Age, setUpdatedOwner_Age] = useState(owner_age);
 
+    //function to reload page and will attack it to form button
+    const refreshPage = ()=>{
+      window.location.reload();
+   }
+ 
 
     //PATCHING - updating our user info in the backend
     function handleEditForm(e) {
@@ -82,18 +87,18 @@ function UserProfile(){
     return (
       <div className="container">
       {/* User Profile Card */}
-      <div className="profile-card user-profile-card" style={{backgroundImage: `url(${image_url})`}}>
-        <div onClick={() => setIsvisible(!isVisible)}>
+      <div onClick={() => setIsvisible(!isVisible)} className="profile-card user-profile-card" style={{backgroundImage: `url(${image_url})`}}>
+        <div>
           <h2>
             {petName}, {age}
           </h2>
           <h4>Breed: {breed}</h4>
           {isVisible ? (
             <div className="owner-details">
-              <h3>
+              <h5>
                 My owners name is, {owner_name}. They are {owner_age} and love{" "}
                 {owner_hobby}.
-              </h3>
+              </h5>
             </div>
           ) : null}
         </div>
@@ -107,7 +112,7 @@ function UserProfile(){
                 name="petName"
                 value={updatedPetName}
                 onChange={(e) => setUpdatedPetName(e.target.value)}
-                style={{display: 'block'}}
+                style={{display: 'block', borderRadius: "4px"}}
             />
             <label>Cat or Dog:</label>
             <input
@@ -174,7 +179,7 @@ function UserProfile(){
                 style={{display: 'block'}}
             />
             <br/>
-            <button className="btn-sm btn-danger" type="submit">Update Your Profile Information</button>
+            <button onClick={refreshPage} className="btn-sm btn-danger" type="submit">Update Your Profile Information</button>
 
         </form>
         </div>

@@ -174,6 +174,7 @@ function UserProfile(){
                 onChange={(e) => setUpdatedOwner_Age(e.target.value)}
                 style={{display: 'block'}}
             />
+            <br/>
             <button type="submit">Update Your Profile Information</button>
 
         </form>

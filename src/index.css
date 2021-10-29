@@ -34,11 +34,15 @@ img:hover {
 }
 
 body{
-  background-image: url("./images/home-background.png");
-  background-size: auto;
-  background-repeat:no-repeat;
   font-family: 'Raleway', sans-serif;
+  background-color: #E9dfd6;
+  background-image: url("./images/home-background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  
 
+  
 }
 
 .match-pic{
@@ -46,5 +50,33 @@ body{
   max-width: 250px;
   max-height: 250px;
   
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #FFFF00;
+  padding: 10px;
+  }
+
+
+.center-title {
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+
+}
+
+#center-title-button {
+  position: fixed;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  size: 100ch;
 }
 

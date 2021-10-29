@@ -1,85 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 
 .logo {
   height: 40px;
   object-fit: contain;
+  /* border-style: none;
+  transform: scale(1);
+  animation: pulse 2s infinite; */
 }
 
-.container{
+/* .logo:hover{
+  border-style: none;
+  transform: scale(1);
+  animation: pulse 2s infinite;
+} */
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95); 
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+.container {
   display: flex;
   justify-content: space-between;
   padding-top: 10px;
-
 }
 
- body{
-   font-family: 'Raleway', sans-serif;
-   background-color: #E9dfd6;
-   background-image: url("./images/home-background.png");
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   background-position: center;
- }
-
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #e9dfd6;
+  background-image: url("./images/home-background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
 
 .card-container {
   display: flex;
   justify-content: center;
   margin-top: 6vh;
   background-color: none;
-  background-size: cover;  
+  background-size: cover;
 }
 
-.profile-card{
-    width: 300px;
-    padding: 20px;
-    max-width: 85vw;
-    color: white;
-    height: 50vh;
-    border-radius: 20px;
-    background-size: cover;
-    background-position: center;
-    margin-left: 225px;
-    margin-top: 100px;
+.profile-card {
+  width: 300px;
+  padding: 20px;
+  max-width: 85vw;
+  color: white;
+  height: 50vh;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  margin-left: 225px;
+  margin-top: 100px;
 }
 
-.swipe{
-  position:absolute;
+.swipe {
+  position: absolute;
 }
-
 
 .center {
-   position: absolute;
-   left: 50%;
-   top: 50%;
-   transform: translate(-50%, -50%);
-   border: 5px solid #FFFF00;
-   padding: 10px;
-   }
-   
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #ffff00;
+  padding: 10px;
+}
 
- .center-title {
-   position: fixed;
-   left: 50%;
-   top: 40%;
-   transform: translate(-50%, -50%);
-   padding: 10px;
-   }
+.center-title {
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
 
- #center-title-button {
-   position: fixed;
-   left: 50%;
-   top: 100%;
-   transform: translate(-50%, -50%);
-   padding: 10px;
- }
-   
-.match-pic{
-  position:absolute;
+#center-title-button {
+  position: fixed;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.match-pic {
+  position: absolute;
   max-width: 250px;
   max-height: 250px;
 }
-
 
 #center-title-button {
   position: fixed;
@@ -90,5 +106,10 @@
   size: 100ch;
 }
 
+.user-profile-card {
+  float: left;
+}
 
-
+.user-profile-form {
+  float: right;
+}

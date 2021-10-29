@@ -58,9 +58,10 @@ function MatchingCard({
       >
         <div
           className="profile-card"
+          onClick={() => setIsvisible(!isVisible)}
           style={{ backgroundImage: `url(${imageUrl})` }}
         >
-          <div onClick={() => setIsvisible(!isVisible)}>
+          <div >
             <h3>
               {petName}, {petAge}
             </h3>

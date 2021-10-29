@@ -59,6 +59,11 @@ function UserProfile(){
     const [updatedOwner_Name, setUpdatedOwner_Name] = useState(owner_name);
     const [updatedOwner_Age, setUpdatedOwner_Age] = useState(owner_age);
 
+    //function to reload page and will attack it to form button
+    const refreshPage = ()=>{
+      window.location.reload();
+   }
+ 
 
     //PATCHING - updating our user info in the backend
     function handleEditForm(e) {
@@ -174,7 +179,7 @@ function UserProfile(){
                 style={{display: 'block'}}
             />
             <br/>
-            <button className="btn-sm btn-danger" type="submit">Update Your Profile Information</button>
+            <button onClick={refreshPage} className="btn-sm btn-danger" type="submit">Update Your Profile Information</button>
 
         </form>
         </div>

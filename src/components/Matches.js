@@ -1,16 +1,19 @@
+import { useState } from "react"
+
+
+
 function Matches({
   petName, species, breed, age, ownerHobby, imageUrl, profileLike, ownerName, ownerAge,
 }) {
   
+  const [isVisible, setIsVisible] = useState(false)
+
   return (
-    <div className="match-card" style={{backgroundImage: `url(${imageUrl})`}}>
+    <div onClick={() => setIsVisible(!isVisible)} className="match-card" style={{backgroundImage: `url(${imageUrl})`}}>
       <h1>
         {ownerName}, {ownerAge}
       </h1>
-      <h3>Hobby: {ownerHobby}</h3>
-      <h3>
-        {species}: {petName}, {age}, {breed}
-      </h3>
+      {isVisible ? <div><h4>Hobby: {ownerHobby}</h4><h4>{species} {petName}, {age}, {breed}</h4></div>: null}
     </div>
   );
 }

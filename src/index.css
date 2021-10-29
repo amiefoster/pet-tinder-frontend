@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 
 
+.logo {
+  max-width:200px;
+}
+
+
  body{
    font-family: 'Raleway', sans-serif;
    background-color: #E9dfd6;
@@ -9,6 +14,7 @@
    background-attachment: fixed;
    background-position: center;
  }
+
 
 .card-container {
   display: flex;
@@ -34,6 +40,7 @@
 .swipe{
   position:absolute;
 }
+
 
 .center {
    position: absolute;

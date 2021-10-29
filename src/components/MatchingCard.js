@@ -31,6 +31,7 @@ function MatchingCard({petName, id, species, breed, petAge, ownerHobby, ownerNam
             handleDeleteClick(id)}
             else if (direction === "right"){
                 handleLikeClick(petName, id, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge)
+                itsAMatch()
             }
     }
 

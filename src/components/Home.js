@@ -1,14 +1,12 @@
 
 
 function Home() {
-    
-
-
+   
 return (
     <div className="home-background">
         <div className="center-title">
             <div className="center-image">
-                <h1 style={{fontSize: "15vw", color: "#FA8072", textShadow: "2px 2px 5px red", margin: "0", textAlign: "center",}}>DANDER
+                <h1 style={{fontSize: "15vw", color: "#ef266a", textShadow: "2px 2px 5px red", margin: "0", textAlign: "center",}}>SWIPE RIGHT
                 </h1>
                 <div>
                 </div>

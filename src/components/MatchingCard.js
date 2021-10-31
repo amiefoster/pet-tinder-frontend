@@ -24,9 +24,6 @@ function MatchingCard({
   //handles the swipe - takes in direction - if left then sned the id to handleDeleteClick -
   //if right then send details to handleLikeClick
   //need to make sure that itsAMatch is triggered
-////////////////////////////////////////////
-  //////////??ADDED LAST NIGHT PASSING IN PROFILE LIKE TO ITS A MATCH  - - - THIS SHOULD ALLOW THAT FUNCTION TO GRAB THAT VALUE AND COMPARE AND DISPLAY THE MATCHING PIATURE//////////////
-///////////////////////////////////////////
 
   function swiped(
     direction, petName, id, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge
@@ -36,9 +33,15 @@ function MatchingCard({
     } else if (direction === "right") {
       handleLikeClick(
         petName, id, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge
-      ) && itsAMatch(profileLike);
+      )
     }
-    console.log(profileLike)
+  }
+
+  //once card has left screen this function removes it from the list of potential matches because the user has already swiped
+  function removeLikedCard(dir, id){
+    if (dir === "right"){
+      handleDeleteClick(id)
+    }
   }
 
   return (
@@ -52,9 +55,8 @@ function MatchingCard({
         preventSwipe={["up", "down"]}
         onSwipe={(dir) =>
           swiped(
-            dir, petName, id, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge
-          )
-        }
+            dir, petName, id, species, breed, petAge, ownerHobby, ownerName, imageUrl, profileLike, ownerAge)}
+        onCardLeftScreen={(dir) => removeLikedCard(dir, id)}
       >
         <div
           className="profile-card"

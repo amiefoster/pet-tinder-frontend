@@ -27,9 +27,7 @@ function MatchingContainer() {
       method: "DELETE",
     })
       .then((response) => response.json())
-      .then((data) => {
-        handleDelete(data);
-      });
+      .then((data) => handleDelete(data));
   }
   //deletes from the browser and resets the state to filter out card with deleteId
   function handleDelete(deleteID) {
@@ -64,7 +62,7 @@ function MatchingContainer() {
       }),
     })
       .then((resp) => resp.json())
-      // .then((data) => console.log(data));
+      .then(data => console.log(data))
   }
 
 //maps through pet profiles and sneds down props to matching card

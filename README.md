@@ -46,5 +46,8 @@ Start the server
 ## Authors
 
 - [@amiefoster](https://github.com/amiefoster)
+- [@nasjac26](https://github.com/nasjac26)
+- [@Chanez89](https://github.com/Chanez89)
+
 
   

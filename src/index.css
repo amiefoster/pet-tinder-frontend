@@ -44,15 +44,42 @@
   display: flex;
   justify-content: space-between;
   padding-top: 10px;
+  background-color: #e9dfd6; 
+
 }
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #e9dfd6;
-  background-image: url("./images/home-background.png");
+  /* background-color: #e9dfd6;
+  background-image: url("./images/home-background.png"); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+}
+
+.home-background {
+  background-image: url("./images/home-background.png");
+  height: 135vh;
+  width: 100vw;
+  overflow: scroll;
+}
+
+.background-solid{
+  background-color: #e9dfd6; 
+}
+
+.navbar{
+  background-color: #e9dfd6;
+}
+
+/* .matches-background{
+  height: 100vh;
+  width: 100vw;
+  background-color: #e9dfd6; 
+} */
+
+.matching-background{
+  background-color: #e9dfd6; 
 }
 
 .card-container {
@@ -78,6 +105,7 @@ body {
 
 .swipe {
   position: absolute;
+  align-items: center;
 }
 
 .center {
@@ -121,6 +149,7 @@ body {
 }
 
 .user-profile-card {
+  margin-top: 180px;
   float: left;
 }
 
@@ -128,13 +157,18 @@ body {
   float: right;
   margin-right: 230px;
   margin-top: 100px;
-  padding: 10px;
-  padding-left: 10px;;
-  background: rgba(225, 225, 225, 0.85);
+  padding-top: 30px;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin-bottom: 90px;
+  background: none;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: solid;
+  border-width: 1px;
+  border-color: #6c757d;
 }
 
 .match-card{
@@ -152,16 +186,34 @@ body {
 
 
 .matches-container{
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 6vh;
-  background-color: none;
   background-size: cover;
+  background-color: #e9dfd6; 
 }
 
 .big-card-container{
-  margin-left: 28%;
-  /* fuck you git! */
+  margin-left: 20%;
+  background-color: #e9dfd6; 
+  height: 100vh;
+  width: 100vw;
+}
+
+.profile-container{
+  background-color: #e9dfd6; 
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+.space-div{
+  width: 100px;
+}
+
+input:hover {
+  border: 1px solid black;
+  opacity: 80%;
 
 }

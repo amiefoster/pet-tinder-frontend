@@ -86,7 +86,7 @@ function UserProfile(){
 
     return (
 
-      <div className="container">
+      <div className="profile-container">
       <div className="profile-card user-profile-card" style={{backgroundImage: `url(${image_url})`}}>
         <div onClick={() => setIsvisible(!isVisible)}>
           <h2>
@@ -103,6 +103,8 @@ function UserProfile(){
           ) : null}
         </div>
       </div>
+
+      <div className="space-div"></div>
 
         <form onSubmit={handleEditForm} className="user-profile-form">
             <label>Pet Name:</label>

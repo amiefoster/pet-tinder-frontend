@@ -88,7 +88,11 @@ function MatchingContainer() {
     });
   }
 
-  return <div className="big-card-container">{renderPetProfiles()}</div>;
+  return (
+    <div className="matching-background">
+      <div className="big-card-container">{renderPetProfiles()}</div>
+    </div>
+  )
 }
 
 export default MatchingContainer;

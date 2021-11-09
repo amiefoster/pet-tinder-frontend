@@ -45,7 +45,7 @@ function MatchingCard({
   }
 
   return (
-    <div >
+    <div className="matching-card-background">
       {match ? (
         <img src={matchImg} className="match-pic" alt="match banner" />
       ) : null}

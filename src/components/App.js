@@ -8,7 +8,7 @@ import MatchesContainer from "./MatchesContainer";
 
 function App() {
   return (
-    <div>
+    <div className="background-solid">
       <Navbar />
       <Switch>
         <Route exact path="/Matches">

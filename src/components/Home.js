@@ -1,3 +1,6 @@
+import background from "../images/home-background.png";
+
+
 function Home() {
   return (
     <div className="home-background">
@@ -19,8 +22,7 @@ function Home() {
             <button
               type="button"
               id="center-title-button"
-              class="btn-lg btn-danger"
-            >
+              class="btn-lg btn-danger">
               Find Your Match
             </button>
           </a>
